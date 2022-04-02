@@ -1,0 +1,39 @@
+{% capture listItems %}
+
+{%- assign allItems = blogs['post'].articles -%}
+{%- assign count = 0 -%}                    
+{%- for item in allItems -%}
+    {% if count == 2 %}{% break %}
+{% endif %}{% assign refs = item.metafields.udesly['category'] | map: "handle" %}{% assign condition_0 = false %}                  
+                {% unless refs contains "tasting" %}
+                    {% assign condition_0 = true %}
+                {% endunless %}{% if condition_0 %}
+  {% assign count = count | plus: 1 %}
+   <div id="w-node-_52764ebf-e818-5ccf-1bb4-821b266c0e59-81ba5be2" role="listitem" class="w-dyn-item">
+              <a data-w-id="7759d687-0dea-6884-210d-19d6d793dd3a" href="{{ item.url }}" class="blog-card no-border w-inline-block">
+                <div class="product-text-wrapper"></div>
+                <div class="container-image-blog"><img style="-webkit-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" src="{{ item.image | img_url: 'master' }}" alt="{{ item.image.alt }}" class="image-product" srcset="{{ item.image | img_url: '1920x' }} 1920w,{{ item.image | img_url: '1600x' }} 1600w,{{ item.image | img_url: '1366x' }} 1366w,{{ item.image | img_url: '1024x' }} 1024w,{{ item.image | img_url: '768x' }} 768w,{{ item.image | img_url: '640x' }} 640w"></div>
+                <div class="wrapper-info-blog">
+                  <h1 style="color:rgb(255,255,255)" class="heading-card-blog blog">{{ item.title }}</h1>
+                  <p class="paragraph-blog-card">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus.</p>
+                  <div class="date-blog-card">{{ item.published_at | date: "%B %e, %Y" }}</div>
+                  <div class="arrow-wrapper">
+                    <div style="-webkit-transform:translate3d(0%, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0%, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0%, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0%, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="text-blog">⟶</div>
+                  </div>
+                </div>
+              </a>
+            </div>
+  {% endif %}
+{%- endfor -%}
+
+{% endcapture %}
+{% assign items_length = listItems | strip | size %}
+
+<div class="collection-list-wrapper blog page w-dyn-list" udy-collection="post">
+          {%- unless items_length == 0 -%}<div role="list" class="collection-list blog no-border w-dyn-items">
+            {{ listItems }}
+          </div>{%- endunless -%}
+          {%- if items_length == 0 -%}<div class="empty-state w-dyn-empty">
+            <div class="empty-text">No items found.</div>
+          </div>{%- endif -%}
+        </div>

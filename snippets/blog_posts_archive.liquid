@@ -1,0 +1,27 @@
+{% capture listItems %}  
+                        {% for item in blog.articles %}
+                        <div id="w-node-_2532c346-241c-5ab2-af27-15aca3c13d63-b5ba5be0" role="listitem" class="collection-item w-dyn-item">
+          <a data-w-id="2532c346-241c-5ab2-af27-15aca3c13d64" style="opacity:0" href="{{ item.url }}" class="blog-card w-inline-block">
+            <div class="product-text-wrapper"></div>
+            <div class="container-image-blog"><img item="featured-image" src="{{ item.image | img_url: 'master' }}" alt="{{ item.image.alt }}" class="image-product blog" srcset="{{ item.image | img_url: '1920x' }} 1920w,{{ item.image | img_url: '1600x' }} 1600w,{{ item.image | img_url: '1366x' }} 1366w,{{ item.image | img_url: '1024x' }} 1024w,{{ item.image | img_url: '768x' }} 768w,{{ item.image | img_url: '640x' }} 640w"></div>
+            <div class="wrapper-info-blog">
+              <h1 item="title" data-w-id="2532c346-241c-5ab2-af27-15aca3c13d69" class="heading-card-blog blog">{{ item.title }}</h1>
+              <p item="excerpt" class="paragraph-blog-card">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.</p>
+              <div item="date" class="date-blog-card">{{ item.published_at | date: "%B %e, %Y" }}</div>
+              <div class="arrow-wrapper">
+                <div data-w-id="2532c346-241c-5ab2-af27-15aca3c13d6e" class="text-blog">⟶</div>
+              </div>
+            </div>
+          </a>
+        </div>
+                        {% endfor %}
+                        {% endcapture %}
+{% assign items_length = listItems | strip | size %}
+    <div class="collection-list-wrapper blog category w-dyn-list" udy-collection="post">
+      {%- unless items_length == 0 -%}<div role="list" class="collection-list blog w-dyn-items">
+        {{ listItems }}
+      </div>{%- endunless -%}
+      {%- if items_length == 0 -%}<div class="empty-state w-dyn-empty">
+        <div class="empty-text">No items found.</div>
+      </div>{%- endif -%}
+    </div>

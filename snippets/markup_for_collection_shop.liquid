@@ -1,0 +1,26 @@
+{% capture listItems %}
+{% for item in collections[settings.collection_shop].products limit: settings.collection_shop_limit %}
+<div id="w-node-ab9f9f2a-41f3-82e4-c922-e31d93782995-a9ba5bf5" role="listitem" class="w-dyn-item">
+                  <div class="product-card-shop">
+                    <a data-w-id="ab9f9f2a-41f3-82e4-c922-e31d93782997" href="{{ item.url | within: collection }}" class="link-block-shop shop w-inline-block">
+                      <div item="title" class="product-name">{{ item.title }}</div>
+                      <div item="price" data-commerce-type="variation-price" class="text-price">{{ item.price | money }}</div>
+                      <div data-w-id="ab9f9f2a-41f3-82e4-c922-e31d9378299a" class="buy-now-button">
+                        <div class="text-buy-now-button">Buy</div>
+                      </div>
+                    </a>
+                    <div class="product-text-wrapper"></div><img item="featured-image" alt="{{ item.featured_image.alt }}" src="{{ item.featured_image | img_url: 'master' }}" class="image-product" data-commerce-type="variation-image" srcset="{{ item.featured_image | img_url: '1920x' }} 1920w,{{ item.featured_image | img_url: '1600x' }} 1600w,{{ item.featured_image | img_url: '1366x' }} 1366w,{{ item.featured_image | img_url: '1024x' }} 1024w,{{ item.featured_image | img_url: '768x' }} 768w,{{ item.featured_image | img_url: '640x' }} 640w">
+                    <a href="{{ item.url | within: collection }}" class="button-product-mobile w-button">View More</a>
+                  </div>
+                </div>
+{%- endfor -%}
+{% endcapture %}
+{% assign items_length = listItems | strip | size %}
+<div class="collection-list-wrapper w-dyn-list" udy-collection="product">
+              {%- unless items_length == 0 -%}<div role="list" class="collection-list shop w-dyn-items">
+                {{ listItems }}
+              </div>{%- endunless -%}
+              {%- if items_length == 0 -%}<div class="w-dyn-empty">
+                <div>No items found.</div>
+              </div>{%- endif -%}
+            </div>

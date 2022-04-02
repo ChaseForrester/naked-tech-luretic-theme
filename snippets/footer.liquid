@@ -1,0 +1,51 @@
+<div class="mini-footer">
+      <div class="form-section wf-section">
+        <div class="form-block w-form">
+          {%- form "contact",  class: "newsletter-form" -%}
+            <div class="container-newsletter-form">
+              <div class="wrapper-heading-newsletter">
+                <h3 class="heading-newsletter">{{ 't1d548131' | t }}<br>{{ 't251e9bc8' | t }}</h3><input type="email" class="mail-label w-input" maxlength="256" name="contact[email]" data-name="Email 2" placeholder="Your Email" id="email-2" required="">
+              </div><input type="submit" value="﹥" data-wait="Please wait..." class="submit-button-newsletter w-button">
+            </div><label class="w-checkbox checkbox">
+              <div class="w-checkbox-input w-checkbox-input--inputType-custom checkbox-layout"></div><input type="checkbox" id="checkbox-2" name="contact[checkbox_]" data-name="Checkbox 2" style="opacity:0;position:absolute;z-index:-1"><span class="checkbox-label w-form-label" for="checkbox-2">{{ 't57b71b87' | t }}</span>
+            </label>
+          {%- assign form_success = form.posted_successfully? -%}{%- assign form_errors = form.errors -%}{%- render "form-general-script", form_success: form_success, form_errors: form_errors -%}{%- endform -%}
+          <div class="success-message w-form-done  {% if form_success %}form-posted-successfully{% endif %}">
+            <div class="text-licensing-second">{{ 't5a0ea5a1' | t }}</div>
+          </div>
+          {%- unless form_success -%}<div class="error-message w-form-fail  {% if form.errors %}form-has-errors{% endif %}">
+            <div class="text-licensing">{%- render "form-errors", form_errors: form_errors -%}</div>
+          </div>{%- endunless -%}
+        </div>
+        <div class="info-wrapp">
+          <div class="link-wrapp">
+            <a href="{{ pages["about"].url }}" aria-current="page" class="link cursor w-inline-block w--current">
+              <p class="privacy-paragraph">{{ 't585238d' | t }}</p>
+            </a>
+            <a href="https://apps.kitomba.com/bookings/ncbsalons" class="link cursor w-inline-block">
+              <p class="privacy-paragraph">{{ 't3d9f5bc' | t }}</p>
+            </a>
+            <a href="{{ pages["shop"].url }}" class="link cursor w-inline-block">
+              <p class="privacy-paragraph">{{ 't35daf6' | t }}</p>
+            </a>
+            <a href="{{ pages["faq"].url }}" class="link cursor w-inline-block">
+              <p class="privacy-paragraph">{{ 't18b16' | t }}</p>
+            </a>
+            <a href="{{ pages["contact"].url }}" class="link cursor w-inline-block">
+              <p class="privacy-paragraph">{{ 't38b72420' | t }}</p>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="w-layout-grid footer-grid">
+        <div id="w-node-_5abb1e98-0f6a-790c-0896-8a0108b0484e-08b04824" class="wrap-copyright">
+          <div class="back-to-top-text"><strong class="text-bold">{{ 't3ee5e174' | t }}</strong></div>
+        </div>
+        <div id="w-node-_5abb1e98-0f6a-790c-0896-8a0108b04852-08b04824" class="wrap-link-footer">
+          <p class="top-text">{{ 'tn6498b733' | t }}<a href="http://www.nakedtech.com.au" class="webflow-link">{{ 't1c0d9d5f' | t }}</a>
+          </p>
+          <p class="text-credits">{{ 't461e7d51' | t }}<a href="https://www.nakedtech.com.au/about-me-page" class="udesly-link">{{ 't128a3fd8' | t }}</a>
+          </p>
+        </div>
+      </div>
+    </div>

@@ -1,0 +1,25 @@
+{% capture listItems %}
+{% for item in collections[settings.collection_2_shop].products limit: settings.collection_2_shop_limit %}
+<div role="listitem" class="w-dyn-item">
+                  <div class="product-card-shop tasting">
+                    <a data-w-id="6fede0fb-d409-72b5-0d87-6222929cb184" href="{{ item.url | within: collection }}" class="link-block-shop shop w-inline-block">
+                      <div class="product-name">{{ item.title }}</div>
+                      <div data-commerce-type="variation-price" class="text-price">{{ item.price | money }}</div>
+                      <div style="-webkit-transform:translate3d(0, 0, 0) scale3d(0.2, 0.2, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0.2, 0.2, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0.2, 0.2, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0.2, 0.2, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0" class="buy-now-button">
+                        <div class="text-buy-now-button">Buy</div>
+                      </div>
+                    </a>
+                    <div class="product-text-wrapper"></div><img src="{{ item.featured_image | img_url: 'master' }}" alt="{{ item.featured_image.alt }}" class="image-product tasting" data-commerce-type="variation-image" srcset="{{ item.featured_image | img_url: '1920x' }} 1920w,{{ item.featured_image | img_url: '1600x' }} 1600w,{{ item.featured_image | img_url: '1366x' }} 1366w,{{ item.featured_image | img_url: '1024x' }} 1024w,{{ item.featured_image | img_url: '768x' }} 768w,{{ item.featured_image | img_url: '640x' }} 640w">
+                  </div>
+                </div>
+{%- endfor -%}
+{% endcapture %}
+{% assign items_length = listItems | strip | size %}
+<div class="collection-list-wrapper-shop w-dyn-list" udy-collection="product">
+              {%- unless items_length == 0 -%}<div role="list" class="collection-list shop w-dyn-items">
+                {{ listItems }}
+              </div>{%- endunless -%}
+              {%- if items_length == 0 -%}<div class="w-dyn-empty">
+                <div>No items found.</div>
+              </div>{%- endif -%}
+            </div>

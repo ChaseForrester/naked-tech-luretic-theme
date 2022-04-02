@@ -1,0 +1,23 @@
+{% capture listItems %}
+
+{%- assign allItems = collections -%}
+{%- for item in allItems limit: 1 offset: 1 -%}
+ <div role="listitem" class="w-dyn-item">
+                  <div class="container-category" style="background-image: url('{{item.image | img_url: 'master'}}')">
+                    <div class="category-text">{{ item.title }}</div>
+                    <h1 class="slider-heading">OUR&nbsp;products are a mixture of indulgent and light.</h1>
+                  </div>
+                </div>
+{%- endfor -%}
+
+{% endcapture %}
+{% assign items_length = listItems | strip | size %}
+
+<div class="w-dyn-list" udy-collection="collection">
+              {%- unless items_length == 0 -%}<div role="list" class="w-dyn-items">
+                {{ listItems }}
+              </div>{%- endunless -%}
+              {%- if items_length == 0 -%}<div class="w-dyn-empty">
+                <div>No items found.</div>
+              </div>{%- endif -%}
+            </div>

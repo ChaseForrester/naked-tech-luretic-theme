@@ -1,0 +1,58 @@
+<div class="footer-wrap wf-section">
+    <div class="content-voci-menu-footer">
+      <div class="w-layout-grid grid-menu-footer">
+        <div id="w-node-_11d56215-9a84-ef62-b9f8-18eced705ceb-ed705ce8" class="list-footer">
+          <h3 class="heading-footer">{{ 'tn1a2819cc' | t }}</h3>
+          <div class="wrapper-link-footer">
+            <a href="{{ pages["about"].url }}" class="link-footer">{{ 't3c2336d' | t }}</a>
+          </div>
+          <div class="wrapper-link-footer">
+            <a href="{{ pages["contact"].url }}" class="link-footer">{{ 'tn64104400' | t }}</a>
+          </div>
+          <div class="wrapper-link-footer">
+            <a href="https://apps.kitomba.com/bookings/ncbsalons" class="link-footer">{{ 'tn3edf106b' | t }}</a>
+          </div>
+          <div class="wrapper-link-footer">
+            <a href="{{ pages["shop"].url }}" class="link-footer">{{ 't274f16' | t }}</a>
+          </div>
+        </div>
+        <div id="w-node-_11d56215-9a84-ef62-b9f8-18eced705cfa-ed705ce8" class="list-footer">
+          <h3 class="heading-footer">{{ 't560f747e' | t }}</h3>
+          <div class="wrapper-link-footer">
+            <a href="#" class="link-footer">{{ 'tn3fbde6f6' | t }}</a>
+          </div>
+          <div class="wrapper-link-footer">
+            <a href="#" class="link-footer">{{ 't38622077' | t }}</a>
+          </div>
+          <div class="wrapper-link-footer">
+            <a href="{{ routes.root_url }}" aria-current="page" class="link-footer w--current">{{ 'tn6ca0ae38' | t }}</a>
+          </div>
+        </div>
+        <div id="w-node-_11d56215-9a84-ef62-b9f8-18eced705d0c-ed705ce8" class="list-footer">
+          <h3 class="heading-footer">{{ 'tn6c12fc73' | t }}</h3>
+          <div class="wrapper-link-footer">
+            <a href="https://www.facebook.com/Luretic" target="_blank" class="w-inline-block"><img src="{{ 'facebook-.png' | asset_url }}" width="24" sizes="(max-width: 991px) 24px, (max-width: 1439px) 2vw, 24px" srcset="{{ 'facebook-p-500.png' | asset_url }} 500w, {{ 'facebook-.png' | asset_url }} 834w" alt="" class="image-social"></a>
+          </div>
+          <div class="wrapper-link-footer">
+            <a href="https://www.instagram.com/ncb_salons" target="_blank" class="w-inline-block"><img src="{{ 'instagram-.png' | asset_url }}" width="24" sizes="(max-width: 991px) 24px, (max-width: 1439px) 2vw, 24px" srcset="{{ 'instagram-p-500.png' | asset_url }} 500w, {{ 'instagram-.png' | asset_url }} 834w" alt="" class="image-social"></a>
+          </div>
+          <div class="wrapper-link-footer">
+            <a href="https://twitter.com/ncbsalons" target="_blank" class="w-inline-block"><img src="{{ 'twitter-.png' | asset_url }}" width="24" sizes="(max-width: 991px) 24px, (max-width: 1439px) 2vw, 24px" srcset="{{ 'twitter-p-500.png' | asset_url }} 500w, {{ 'twitter-.png' | asset_url }} 834w" alt="" class="image-social"></a>
+          </div>
+        </div>
+        <div id="w-node-_11d56215-9a84-ef62-b9f8-18eced705d18-ed705ce8" class="list-footer">
+          <h3 class="heading-footer">{{ 't1ad4c940' | t }}<br>{{ 'tn15c8dd04' | t }}</h3>
+          <p class="paragraph-newsletter-footer">{{ 'tn4682d2b4' | t }}</p>
+          <div class="newsletter-footer-layout-2 w-form">
+            {%- form "contact",  class: "newsletter-footer" -%}<input type="email" class="text-field-5 w-input" maxlength="256" name="contact[email]" data-name="Email 2" placeholder="Enter your email" id="email-2" required=""><input type="submit" value="Submit" data-wait="Please wait..." class="submit-button-footer w-button">{%- assign form_success = form.posted_successfully? -%}{%- assign form_errors = form.errors -%}{%- render "form-general-script", form_success: form_success, form_errors: form_errors -%}{%- endform -%}
+            <div class="success-message w-form-done  {% if form_success %}form-posted-successfully{% endif %}">
+              <div class="success-message black">{{ 't5a0ea5a1' | t }}</div>
+            </div>
+            {%- unless form_success -%}<div class="error-message w-form-fail  {% if form.errors %}form-has-errors{% endif %}">
+              <div class="contact-us-text">{%- render "form-errors", form_errors: form_errors -%}</div>
+            </div>{%- endunless -%}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

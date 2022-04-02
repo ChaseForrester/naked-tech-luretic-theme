@@ -1,0 +1,19 @@
+{% capture listItems %}
+                        {% for item in collections.all.products %}
+                        <div role="listitem" class="address-collection-item w-dyn-item">
+              <div></div>
+            </div>
+                        {% endfor %}
+                        {% endcapture %}
+{% assign items_length = listItems | strip | size %}
+    <div class="w-dyn-list" udy-collection="product">
+          {%- unless items_length == 0 -%}<div role="list" class="collection-list-9 w-dyn-items">
+            {{ listItems }}
+          </div>{%- endunless -%}
+          {%- if items_length == 0 -%}<div class="empty-state-3 w-dyn-empty">
+            <div class="div-block-306">
+              <h1 class="heading-16">Il tuo carrello è vuoto.</h1>
+              <a href="#" class="button-7 w-button">Torna allo Shop</a>
+            </div>
+          </div>{%- endif -%}
+        </div>
