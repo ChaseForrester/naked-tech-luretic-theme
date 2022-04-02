@@ -1,0 +1,107 @@
+{%- assign headerSnippetPath = "header-password" -%}{%- assign wfPage = "61ad89fde648a82648ba5bd6" -%}{%- assign bodyClasses = "" -%}
+  {%- render 'first-navbar' -%}
+  <div class="section-4 wf-section">
+    <div class="cart---copy-this w-form">
+      {%- form "contact",  class: "" -%}<label for="contact[email]">{{ 't3ff5b7c' | t }}</label><input type="email" name="contact[email]" class="w-input" required="">
+        <div class="table-header-2 w-hidden-tiny">
+          <div class="table-header-data-3 product">
+            <p class="table-header-label-2">{{ 'tnd2e3e9c' | t }}</p>
+          </div>
+          <div class="table-header-data-3">
+            <p class="table-header-label-2">{{ 't48db929' | t }}</p>
+          </div>
+          <div class="table-header-data-3">
+            <p class="table-header-label-2">{{ 'tn1df1ab75' | t }}</p>
+          </div>
+          <div class="table-header-data-3">
+            <p class="table-header-label-2">{{ 't4d3eb24' | t }}</p>
+          </div>
+        </div>
+        <div class="w-dyn-list">
+          {%- unless items_length == 0 -%}<div role="list" class="collection-list-9 w-dyn-items">
+            <div role="listitem" class="address-collection-item w-dyn-item">
+              <div></div>
+            </div>
+          </div>{%- endunless -%}
+          {%- if items_length == 0 -%}<div class="empty-state-3 w-dyn-empty">
+            <div class="div-block-306">
+              <h1 class="heading-16">{{ 'tn43bad85c' | t }}</h1>
+              <a href="#" class="button-7 w-button">{{ 'tnaf0ba6e' | t }}</a>
+            </div>
+          </div>{%- endif -%}
+        </div>
+        <div class="div-block-7"><input type="submit" value="Update" data-wait="Waiting..." item="update" id="w-node-_6b8d6b9e-40bf-89bd-6ef1-3cb9b02e7873-48ba5bd6" class="button-6 white update-cart w-button">
+          <div item="title"></div>
+        </div>
+        <div wc="cart-totals" class="div-block-176">
+          <div wc="cart-totals" item="checkout" class="cart-totals---copy-this-2">
+            <div item="line" class="div-block-9">
+              <div item="line-label" class="text-block-81">{{ 'tn692decb8' | t }}</div>
+              <div class="text-block-128">{{ 'tn374c011d' | t }}</div>
+            </div>
+            <div item="line" class="div-block-9">
+              <div item="line-label" class="text-block-81">{{ 'tn6a56866a' | t }}</div>
+              <div item="cart-total" class="text-block-128">{{ 'tn374c011d' | t }}</div>
+            </div><input type="submit" value="Go to Checkout" data-wait="Please wait..." item="checkout" class="button-6 white checkout w-button">
+          </div>
+        </div>
+      {%- assign form_success = form.posted_successfully? -%}{%- assign form_errors = form.errors -%}{%- render "form-general-script", form_success: form_success, form_errors: form_errors -%}{%- endform -%}
+      <div class="w-form-done  {% if form_success %}form-posted-successfully{% endif %}"></div>
+      <div>{{ 't5a0ea5a1' | t }}</div>
+      {%- unless form_success -%}<div class="w-form-fail  {% if form.errors %}form-has-errors{% endif %}">
+        <div>{%- render "form-errors", form_errors: form_errors -%}</div>
+      </div>{%- endunless -%}
+    </div>
+    <div data-node-type="commerce-cart-wrapper" data-open-product="" data-wf-cart-type="modal" data-wf-cart-query="" data-wf-page-link-href-prefix="" class="w-commerce-commercecartwrapper">
+      <a href="#" data-node-type="commerce-cart-open-link" class="w-commerce-commercecartopenlink cart-button-2 w-inline-block"><svg class="w-commerce-commercecartopenlinkicon" width="17px" height="17px" viewBox="0 0 17 17">
+          <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+            <path d="M2.60592789,2 L0,2 L0,0 L4.39407211,0 L4.84288393,4 L16,4 L16,9.93844589 L3.76940945,12.3694378 L2.60592789,2 Z M15.5,17 C14.6715729,17 14,16.3284271 14,15.5 C14,14.6715729 14.6715729,14 15.5,14 C16.3284271,14 17,14.6715729 17,15.5 C17,16.3284271 16.3284271,17 15.5,17 Z M5.5,17 C4.67157288,17 4,16.3284271 4,15.5 C4,14.6715729 4.67157288,14 5.5,14 C6.32842712,14 7,14.6715729 7,15.5 C7,16.3284271 6.32842712,17 5.5,17 Z" fill="currentColor" fill-rule="nonzero"></path>
+          </g>
+        </svg>
+        <div class="w-inline-block">{{ 't1fef40' | t }}</div>
+        <div class="w-commerce-commercecartopenlinkcount cart-quantity-3">{{ cart.item_count }}</div>
+      </a>
+      <div data-node-type="commerce-cart-container-wrapper" style="display:none" class="w-commerce-commercecartcontainerwrapper w-commerce-commercecartcontainerwrapper--cartType-modal">
+        <div data-node-type="commerce-cart-container" class="w-commerce-commercecartcontainer">
+          <div class="w-commerce-commercecartheader">
+            <h4 class="w-commerce-commercecartheading">{{ 'tn77ee8913' | t }}</h4>
+            <a href="#" data-node-type="commerce-cart-close-link" class="w-commerce-commercecartcloselink w-inline-block"><svg width="16px" height="16px" viewBox="0 0 16 16">
+                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                  <g fill-rule="nonzero" fill="#333333">
+                    <polygon points="6.23223305 8 0.616116524 13.6161165 2.38388348 15.3838835 8 9.76776695 13.6161165 15.3838835 15.3838835 13.6161165 9.76776695 8 15.3838835 2.38388348 13.6161165 0.616116524 8 6.23223305 2.38388348 0.616116524 0.616116524 2.38388348 6.23223305 8"></polygon>
+                  </g>
+                </g>
+              </svg></a>
+          </div>
+          <div class="w-commerce-commercecartformwrapper">
+            <form data-node-type="commerce-cart-form" style="display:none" class="w-commerce-commercecartform">
+              <script type="text/x-wf-template" id="wf-template-6b8d6b9e-40bf-89bd-6ef1-3cb9b02e7897"><div data-node-type="cart-item" template-part-bind="6b8d6b9e-40bf-89bd-6ef1-3cb9b02e7898" class="w-commerce-commercecartitem"><img data-node-type="cart-item-image" src="<%= it.image %>" template-part-bind="6b8d6b9e-40bf-89bd-6ef1-3cb9b02e7899" class="w-commerce-commercecartitemimage"><div data-node-type="cart-item-info" template-part-bind="6b8d6b9e-40bf-89bd-6ef1-3cb9b02e789a" class="w-commerce-commercecartiteminfo"><div data-node-type="cart-product-name" template-part-bind="6b8d6b9e-40bf-89bd-6ef1-3cb9b02e789b" class="w-commerce-commercecartproductname"><%= it.title %></div><div>This is some text inside of a div block.</div><ul class="w-commerce-commercecartoptionlist"><% Object.entries(it.properties).forEach( data =>  { %><li data-node-type="cart-option-list-item"><span data-node-type="cart-option-list-item-label"><%= data[0] %></span><span>: </span><span data-node-type="cart-option-list-item-value"><%= data[1] %></span></li><% }) %></ul><a data-node-type="cart-remove-link" href="#" template-part-bind="6b8d6b9e-40bf-89bd-6ef1-3cb9b02e78a7" data-product-id="<%= it.id %>"><div>Remove</div></a></div><input class="w-commerce-commercecartquantity" name="<%= it.id %>" type="number" min="0" min="1" value="<%= it.quantity %>" data-node-type="cart-quantity"></div></script>
+              <div class="w-commerce-commercecartlist" data-wf-collection="database.commerceOrder.userItems" data-wf-template-id="wf-template-6b8d6b9e-40bf-89bd-6ef1-3cb9b02e7897"></div>
+              <div class="w-commerce-commercecartfooter">
+                <div class="w-commerce-commercecartlineitem">
+                  <div>{{ 'tn76f396dc' | t }}</div>
+                  <div class="w-commerce-commercecartordervalue">{{ cart.items_subtotal_price | money }}</div>
+                </div>
+                <div>
+                  <div data-node-type="commerce-cart-quick-checkout-actions">{{ content_for_additional_checkout_buttons }}</div>
+                  <a href="/checkout" value="Continue to Checkout" data-node-type="cart-checkout-button" class="w-commerce-commercecartcheckoutbutton" data-loading-text="Hang Tight...">{{ 'tn7941186e' | t }}</a>
+                </div>
+              </div>
+            </form>
+            <div class="w-commerce-commercecartemptystate">
+              <div>{{ 't3d503d2b' | t }}</div>
+            </div>
+            <div style="display:none" data-node-type="commerce-cart-error" class="w-commerce-commercecarterrorstate">
+              <div class="w-cart-error-msg" data-w-cart-quantity-error="Product is not available in this quantity." data-w-cart-general-error="Something went wrong when adding this item to the cart." data-w-cart-checkout-error="Checkout is disabled on this site." data-w-cart-cart_order_min-error="The order minimum was not met. Add more items to your cart to continue." data-w-cart-subscription_error-error="Cart failed.">{{ 'tn1c765d0d' | t }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {%- render 'footer' -%}
+  <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=61ad89fde648a805e9ba5bc9" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+  <script src="{{ 'luretic.js' | asset_url }}" type="text/javascript"></script>
+  <!-- [if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif] -->
+
+{{ 'udesly-shopify.min.js' | asset_url | script_tag }}
